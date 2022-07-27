@@ -1,6 +1,9 @@
 @import ../../styles/_reusableClasses
 @import ../../styles/_typography
 @import ../../styles/_colors
+@import include-media
+
+$breakpoints: (phone: 640px, tablet: 768px, desktop: 1024px) !default
 
 .profile
 	position: relative
@@ -143,6 +146,16 @@
 			background-color: $--body-color
 
 .projects
+	&__content
+		display: grid
+		grid-template-columns: 1fr 1fr
+		gap: 1.5rem
+
+		@include media("<tablet") 
+			display: grid
+			grid-template-columns: 1fr
+		
+
 	&__card
 		position: relative
 		border-radius: 1rem
@@ -184,6 +197,12 @@
 	&__content
 		row-gap: 3.5rem
 		justify-content: space-around
+		display: flex
+		gap: 1.5rem
+
+		@include media("<tablet") 
+			display: grid
+		
 
 	&__title
 		font-size: $--h3-font-size
