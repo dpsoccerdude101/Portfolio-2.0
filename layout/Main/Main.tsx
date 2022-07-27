@@ -12,22 +12,6 @@ import {
 export default function Main({ ...props }: MainProps): JSX.Element {
 	const [activeTab, setActiveTab] = useState<'projects' | 'skills'>('projects');
 
-	const [width, setWidth] = useState<number>(typeof window !== 'undefined' ? window.innerWidth : 0);
-
-	const handleWindowSizeChange = () => {
-		if (typeof window !== 'undefined') 
-			setWidth(window.innerWidth);		
-	};
-	
-	useEffect(() => {
-		window.addEventListener('resize', handleWindowSizeChange);
-		return () => {
-			window.removeEventListener('resize', handleWindowSizeChange);
-		};
-	}, []);
-
-	const isMobile = width <= 768;
-
 	return (
 		<main {...props} className={styles.main}>
 			<section className={cn(styles.filters, styles.container)}>
@@ -58,7 +42,6 @@ export default function Main({ ...props }: MainProps): JSX.Element {
 					<div
 						className={cn(
 							styles.projects__content,
-							isMobile ? styles.grid : styles.flex,
 							activeTab !== 'projects' && styles.disableTab
 						)}
 					>
@@ -91,7 +74,6 @@ export default function Main({ ...props }: MainProps): JSX.Element {
 					<div
 						className={cn(
 							styles.skills__content,
-							isMobile ? styles.grid : styles.flex,
 							activeTab !== 'skills' && styles.disableTab
 						)}
 					>

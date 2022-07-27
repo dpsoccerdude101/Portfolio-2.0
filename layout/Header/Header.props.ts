@@ -50,7 +50,7 @@ export const profileInfo: profileInfo[] = [
 	},
 	{
 		id: 1,
-		title: 3,
+		title: 4,
 		desctiption: 'Completed projects',
 	},
 	{

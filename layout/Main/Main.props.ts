@@ -1,25 +1,36 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
-export type MainProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+export type MainProps = DetailedHTMLProps<
+  HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+>;
 
 interface ProjectDataType {
-	id: number;
-	img: string;
-	imgAlt: string;
-	title: string;
-	subtitle: string;
-	projectLink: string;
+  id: number;
+  img: string;
+  imgAlt: string;
+  title: string;
+  subtitle: string;
+  projectLink: string;
 }
 
 interface SkillsDataType {
-	id: number;
-	skill: string;
-	icon: string;
+  id: number;
+  skill: string;
+  icon: string;
 }
 
 export const projectData: ProjectDataType[] = [
 	{
 		id: 0,
+		img: '/images/projects/rocmaidan.webp',
+		imgAlt: 'RocMaidan',
+		title: 'RocMaidan',
+		subtitle: 'Humanitarian & Medical Aid for Ukraine',
+		projectLink: 'https://www.rocmaidan.org/',
+	},
+	{
+		id: 1,
 		img: '/images/projects/miccheck.webp',
 		imgAlt: 'MicCheck App',
 		title: 'MicCheck App',
@@ -27,7 +38,15 @@ export const projectData: ProjectDataType[] = [
 		projectLink: 'https://www.themiccheck.com/',
 	},
 	{
-		id: 1,
+		id: 2,
+		img: '/images/projects/scanpanda.webp',
+		imgAlt: 'ScanPanda',
+		title: 'ScanPanda',
+		subtitle: 'Word-of-Mouth Marketing with Monetary Incentives',
+		projectLink: 'https://scanpanda.org/',
+	},
+	{
+		id: 3,
 		img: '/images/projects/kalyna.webp',
 		imgAlt: 'Registration Form',
 		title: 'Kalyna-UAFGR',
