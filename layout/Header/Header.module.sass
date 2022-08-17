@@ -93,26 +93,22 @@
 	display: inline-flex
 	align-items: center
 	column-gap: .5rem
-	background-color: $--first-color
+	background: radial-gradient(circle at top left, rgba(255,255,255,0.1), rgba(0,0,0, 0.1)), url(../../public/noise.svg)
 	color: $white
 	padding: 1.15rem 1.5rem
-	border-radius: .5rem
+	border-radius: .625rem
 	transition: .3s
-	box-shadow: 0 8px 24px hsla($--hue,$--sat,$--lig, .25)
-	mix-blend-mode: luminosity
+	backdrop-filter: blur(5px)
+	box-shadow: inset 0px 0px 0px 1px rgba( 0, 0, 0, 0.02 ), inset 0px 0px 0px 1px rgba( 255, 255, 255, 0.08 )
+	box-sizing: border-box
+	position: relative
+	transform-style: preserve-3d
 
 	&:hover
-		background-color: $--first-color-alt
+		background: radial-gradient(circle at top left, rgba(255,255,255,0.15), rgba(0,0,0, 0.15)), url(../../public/noise.svg)
 
 	&__small
 		padding: .75rem
-		box-shadow: none
-
-	&__gray
-		background-color: $--container-color
-		color: $--title-color
-		&:hover
-			background-color: $--container-color-alt
 
 	i
 		font-size: 1.25rem

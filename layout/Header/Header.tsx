@@ -1,6 +1,7 @@
 import { HeaderProps, socialData, profileInfo } from './Header.props';
 import styles from './Header.module.sass';
 import cn from 'classnames';
+import Tilt from 'react-parallax-tilt';
 
 export default function Header({ ...props }: HeaderProps): JSX.Element {
 	return (
@@ -9,7 +10,7 @@ export default function Header({ ...props }: HeaderProps): JSX.Element {
 				<div className={styles.profile__data}>
 					<div className={styles.profile__border}>
 						<div className={styles.profile__perfil}>
-							<img src='./images/avatar.webp' alt='' />
+							<img src="./images/avatar.webp" alt="" />
 						</div>
 					</div>
 					<h2 className={styles.profile__name}>Dennis Pavlyuk</h2>
@@ -21,8 +22,8 @@ export default function Header({ ...props }: HeaderProps): JSX.Element {
 								key={social.id}
 								href={social.href}
 								className={styles.profile__socialLink}
-								rel='noreferrer'
-								target='_blank'
+								rel="noreferrer"
+								target="_blank"
 							>
 								<i className={social.icon}></i>
 							</a>
@@ -34,30 +35,36 @@ export default function Header({ ...props }: HeaderProps): JSX.Element {
 					{profileInfo.map((info) => (
 						<div className={styles.profile__infoGroup} key={info.id}>
 							<h3 className={styles.profile__infoNumber}>{info.title}</h3>
-							<p className={styles.profile__infoDesctiption}>{info.desctiption}</p>
+							<p className={styles.profile__infoDesctiption}>
+								{info.desctiption}
+							</p>
 						</div>
 					))}
 				</div>
 
 				<div className={styles.profile__buttons}>
-					<a
-						href='/files/DennisPavlyukResume (3).pdf'
-						className={styles.button}
-						target='_blank'
-						rel='noopener noreferrer'
-					>
-						Download CV <i className='ri-download-line'></i>
-					</a>
+					<Tilt perspective={500} scale={1.02} gyroscope={true}>
+						<a
+							href="/files/DennisPavlyukResume (3).pdf"
+							className={styles.button}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+              Download CV <i className="ri-download-line"></i>
+						</a>
+					</Tilt>
 
 					<div className={styles.profile__buttonsSmall}>
-						<a
-							href='mailto:me@dennispavlyuk.com'
-							className={cn(styles.button, styles.button__small, styles.button__gray)}
-							target='_blank'
-							rel='noreferrer'
-						>
-							<i className='ri-mail-line'></i>
-						</a>
+						<Tilt perspective={500} scale={1.02} gyroscope={true}>
+							<a
+								href="mailto:me@dennispavlyuk.com"
+								className={cn(styles.button, styles.button__small)}
+								target="_blank"
+								rel="noreferrer"
+							>
+								<i className="ri-mail-line"></i>
+							</a>
+						</Tilt>
 					</div>
 				</div>
 			</div>
