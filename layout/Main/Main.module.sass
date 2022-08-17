@@ -26,7 +26,7 @@ $breakpoints: (phone: 640px, tablet: 768px, desktop: 1024px) !default
 		display: flex
 		align-items: flex-end
 		justify-content: center
-		
+
 		img
 			width: 90px
 
@@ -78,13 +78,13 @@ $breakpoints: (phone: 640px, tablet: 768px, desktop: 1024px) !default
 	&__infoDesctiption
 		font-size: $--smaller-font-size
 		font-weight: 500
-	
+
 	&__buttons
 		column-gap: 1rem
 
 	&__buttonsSmall
 		column-gap: .25rem
-	
+
 	&__buttons, &__buttonsSmall
 		display: flex
 		align-items: center
@@ -107,7 +107,7 @@ $breakpoints: (phone: 640px, tablet: 768px, desktop: 1024px) !default
 	&__small
 		padding: .75rem
 		box-shadow: none
-	
+
 	&__gray
 		background-color: $--text-color-lighten
 		color: $--title-color
@@ -120,12 +120,21 @@ $breakpoints: (phone: 640px, tablet: 768px, desktop: 1024px) !default
 .filters
 	&__content
 		margin: 2rem 0 2.5rem
-		background-color: $--container-color
+		//background-color: $--container-color
 		padding: .375rem
 		border-radius: .75rem
 		display: flex
 		justify-content: space-between
 		column-gap: .5rem
+		z-index: 1
+
+		background: radial-gradient(circle at top left, rgba(255,255,255,0.1), rgba(0,0,0, 0.1)), url(../../public/noise.svg)
+		color: $white
+		transition: .3s
+		backdrop-filter: blur(5px)
+		box-shadow: inset 0px 0px 0px 1px rgba( 0, 0, 0, 0.02 ), inset 0px 0px 0px 1px rgba( 255, 255, 255, 0.08 )
+		box-sizing: border-box
+		position: relative
 
 	&__card
 		img
@@ -141,9 +150,12 @@ $breakpoints: (phone: 640px, tablet: 768px, desktop: 1024px) !default
 		border-radius: .75rem
 		background-color: transparent
 		transition: .3s
+		box-sizing: border-box
+		position: relative
+		//background: radial-gradient(circle at top left, rgba(255,255,255,0.01), rgba(0,0,0, 0.05)), url(../../public/noise.svg)
 
 		&:hover
-			background-color: $--body-color
+			background-color: $--container-color-alt
 
 .projects
 	&__content
@@ -151,16 +163,15 @@ $breakpoints: (phone: 640px, tablet: 768px, desktop: 1024px) !default
 		grid-template-columns: 1fr 1fr
 		gap: 1.5rem
 
-		@include media("<tablet") 
+		@include media("<tablet")
 			display: grid
 			grid-template-columns: 1fr
-		
 
 	&__card
 		position: relative
 		border-radius: 1rem
 		overflow: hidden
-			
+
 		img
 			width: 100%
 			height: 100%
@@ -176,7 +187,7 @@ $breakpoints: (phone: 640px, tablet: 768px, desktop: 1024px) !default
 		align-items: flex-end
 		padding: 1.5rem 1.25rem
 		transition: .3s
-		
+
 	&__subtitle, &__title
 		color: $white
 
@@ -199,10 +210,10 @@ $breakpoints: (phone: 640px, tablet: 768px, desktop: 1024px) !default
 		justify-content: space-around
 		display: flex
 		gap: 1.5rem
+		z-index: 1
 
-		@include media("<tablet") 
+		@include media("<tablet")
 			display: grid
-		
 
 	&__title
 		font-size: $--h3-font-size
@@ -240,4 +251,6 @@ $breakpoints: (phone: 640px, tablet: 768px, desktop: 1024px) !default
 	display: none
 
 .activeButton
-	background-color: $--body-color
+	background: radial-gradient(circle at top left, rgba(255,255,255,0.1), rgba(0,0,0, 0.1)), url(../../public/noise.svg)
+	backdrop-filter: blur(5px)
+	box-shadow: inset 0px 0px 0px 1px rgba( 0, 0, 0, 0.02 ), inset 0px 0px 0px 1px rgba( 255, 255, 255, 0.08 )
