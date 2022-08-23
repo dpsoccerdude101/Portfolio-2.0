@@ -10,7 +10,7 @@ export default function Header({ ...props }: HeaderProps): JSX.Element {
             <Tilt
                 gyroscope={true}
                 tiltAxis='y'
-                tiltMaxAngleY={6}
+                tiltMaxAngleY={1.5}
                 className={cn(
                     overlayStyles.glass,
                     overlayStyles.glassHover,
