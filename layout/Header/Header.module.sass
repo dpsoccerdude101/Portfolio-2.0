@@ -8,7 +8,23 @@
 
 	&__container
 		row-gap: 2rem
-		z-index: 1
+		//z-index: 1
+		//background: radial-gradient(circle at top left, rgba(255,255,255,0.2), rgba(0,0,0, 0.2)), url(../../public/noise.svg)
+		padding: 30px
+		border-radius: .625rem
+		//transition: .3s
+		backdrop-filter: blur(15px)
+		-webkit-backdrop-filter: blur(15px)
+		//box-shadow: inset 0px 0px 0px 1px rgba( 0, 0, 0, 0.02 ), inset 0px 0px 0px 1px rgba( 255, 255, 255, 0.08 )
+		//box-sizing: border-box
+		//position: relative
+		//transform-style: preserve-3d
+		width: 350px
+		margin: 0 auto
+		display: flex
+		align-items: center
+		justify-content: center
+		flex-direction: column
 
 	&__data
 		display: grid
@@ -18,7 +34,13 @@
 	&__perfil
 		width: 100px
 		height: 100px
-		background: linear-gradient(180deg,hsla(199, 97%, 74%, 1) 0%, hsla(199, 97%, 74%, 0.2) 100%)
+		background-color: radial-gradient(circle at top left, hsla(199, 97%, 74%, 0.5), rgba( 0, 0, 0, 0.1 )), url(../../public/noise.svg)
+		backdrop-filter: blur(5px)
+		box-shadow: inset 0px 0px 0px 1px rgba( 0, 0, 0, 0.02 ), inset 0px 0px 0px 1px rgba( 255, 255, 255, 0.08 )
+		box-sizing: border-box
+		position: relative
+
+		//background: linear-gradient(180deg,hsla(199, 97%, 74%, 1) 0%, hsla(199, 97%, 74%, 0.2) 100%)
 		border-radius: 50%
 		overflow: hidden
 		display: flex
@@ -29,7 +51,7 @@
 			width: 90px
 
 	&__border
-		border: 3.5px solid hsla(199, 97%, 74%, 1)
+		//border: 3.5px solid hsla(199, 97%, 74%, 1)
 		justify-content: center
 		width: 115px
 		height: 115px
@@ -37,15 +59,24 @@
 		display: grid
 		place-items: center
 		margin-bottom: .75rem
+		transform-style: preserve-3d
+		display: flex
+		align-items: flex-end
+		justify-content: center
+		overflow: hidden
+		background: radial-gradient(circle at top left, rgba(255,255,255,0.2), rgba(0,0,0, 0.2)), url(../../public/noise.svg), hsla(199, 97%, 74%, 0.7)
+		filter: contrast(1.25)
+		box-shadow: inset 0px 0px 0px 1px hsla(199, 97%, 74%, 0.1), inset 0px 0px 0px 1px hsla(199, 97%, 74%, 0.7), 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%)
+
+		img
+			width: 100px
 
 	&__name
 		font-size: $--h2-font-size
+		text-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%)
 
 	&__profession
-		font-size: $--smaller-font-size
-		font-weight: 500
-		color: $--text-color
-		margin-bottom: 1rem
+		text-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%)
 
 	&__social
 		display: flex
@@ -57,13 +88,38 @@
 		font-size: 2rem
 		color: $--title-color
 		transition: .3s
+		border-radius: 50%
+		height: 40px
+		width: 40px
 		&:hover
 			color: $--first-color
+		&:nth-last-child(1) i
+			color: #0072b1
+		&:nth-last-child(2) i
+			color: #171515
+		&:nth-last-child(3) i
+			color: transparent
+			background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)
+			background-clip: text
+		&:nth-last-child(4) i
+			color: #0088CC
+
+	&__socialIcon
+		z-index: 3
+		width: 100%
+		height: 100%
+		color: black
+		display: flex
+		justify-content: center
+		align-items: center
+		font-size: 25px
+		&:before
 
 	&__info
 		grid-template-columns: repeat(3, max-content)
 		justify-content: center
 		column-gap: 1.5rem
+		text-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%)
 
 	&__infoGroup
 		text-align: center
@@ -93,16 +149,16 @@
 	display: inline-flex
 	align-items: center
 	column-gap: .5rem
-	background: radial-gradient(circle at top left, rgba(255,255,255,0.1), rgba(0,0,0, 0.1)), url(../../public/noise.svg)
+	//background: radial-gradient(circle at top left, rgba(255,255,255,0.1), rgba(0,0,0, 0.1)), url(../../public/noise.svg)
 	color: $white
 	padding: 1.15rem 1.5rem
 	border-radius: .625rem
-	transition: .3s
-	backdrop-filter: blur(5px)
-	box-shadow: inset 0px 0px 0px 1px rgba( 0, 0, 0, 0.02 ), inset 0px 0px 0px 1px rgba( 255, 255, 255, 0.08 )
-	box-sizing: border-box
-	position: relative
-	transform-style: preserve-3d
+	//transition: .3s
+	//backdrop-filter: blur(5px)
+	//box-shadow: inset 0px 0px 0px 1px rgba( 0, 0, 0, 0.02 ), inset 0px 0px 0px 1px rgba( 255, 255, 255, 0.08 )
+	//box-sizing: border-box
+	//position: relative
+	//transform-style: preserve-3d
 
 	&:hover
 		background: radial-gradient(circle at top left, rgba(255,255,255,0.15), rgba(0,0,0, 0.15)), url(../../public/noise.svg)
@@ -112,3 +168,13 @@
 
 	i
 		font-size: 1.25rem
+
+.parallaxEffect
+	transform-style: preserve-3d
+	will-change: transform
+
+	&:hover
+		backdrop-filter: none
+
+.innerElement
+	transform: translateZ(20px)

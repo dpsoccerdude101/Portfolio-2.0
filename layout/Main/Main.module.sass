@@ -126,15 +126,7 @@ $breakpoints: (phone: 640px, tablet: 768px, desktop: 1024px) !default
 		display: flex
 		justify-content: space-between
 		column-gap: .5rem
-		z-index: 1
-
-		background: radial-gradient(circle at top left, rgba(255,255,255,0.1), rgba(0,0,0, 0.1)), url(../../public/noise.svg)
-		color: $white
-		transition: .3s
-		backdrop-filter: blur(5px)
-		box-shadow: inset 0px 0px 0px 1px rgba( 0, 0, 0, 0.02 ), inset 0px 0px 0px 1px rgba( 255, 255, 255, 0.08 )
-		box-sizing: border-box
-		position: relative
+		z-index: 2
 
 	&__card
 		img
@@ -147,15 +139,11 @@ $breakpoints: (phone: 640px, tablet: 768px, desktop: 1024px) !default
 		font-size: $--small-font-size
 		font-family: $--body-font
 		font-weight: 500
-		border-radius: .75rem
 		background-color: transparent
 		transition: .3s
 		box-sizing: border-box
 		position: relative
-		//background: radial-gradient(circle at top left, rgba(255,255,255,0.01), rgba(0,0,0, 0.05)), url(../../public/noise.svg)
-
-		&:hover
-			background-color: $--container-color-alt
+		border-radius: 0.625rem
 
 .projects
 	&__content
@@ -211,6 +199,7 @@ $breakpoints: (phone: 640px, tablet: 768px, desktop: 1024px) !default
 		display: flex
 		gap: 1.5rem
 		z-index: 1
+		text-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%)
 
 		@include media("<tablet")
 			display: grid
@@ -237,7 +226,7 @@ $breakpoints: (phone: 640px, tablet: 768px, desktop: 1024px) !default
 		i
 			font-size: 1rem
 			color: $--first-color
-			mix-blend-mode: color-burn
+			mix-blend-mode: color-dodge
 
 	&__name
 		font-size: $--normal-font-size

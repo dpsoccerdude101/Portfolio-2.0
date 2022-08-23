@@ -1,0 +1,138 @@
+
+.overlay
+    position: fixed
+    z-index: -1
+    background: rgba(255, 255, 255, 0.001) // Make sure this color has an opacity of less than 1
+    //-webkit-backdrop-filter: blur(40px) // This be the blur
+    //backdrop-filter: blur(40px) // This be the blur
+    height: 100vh
+    width: 100%
+    overflow: hidden
+
+.glass
+    z-index: 2
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1)
+    background: radial-gradient(circle at top left, rgba(255,255,255,0.2), rgba(0,0,0, 0.2)), url(../public/noise.svg)
+    backdrop-filter: blur(5px)
+    -webkit-backdrop-filter: blur(5px)
+    box-shadow: inset 0px 0px 0px 1px rgb(0 0 0 / 2%), inset 0px 0px 0px 1px rgb(255 255 255 / 8%), 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%)
+    box-sizing: border-box
+    position: relative
+    transform-style: preserve-3d
+
+.glassHover
+    &:hover
+        box-shadow: inset 0px 0px 0px 1px rgb(0 0 0 / 2%), inset 0px 0px 0px 1px rgb(255 255 255 / 8%), 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+
+.glassElev2
+    box-shadow: inset 0px 0px 0px 1px rgb(0 0 0 / 2%), inset 0px 0px 0px 1px rgb(255 255 255 / 8%), 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+
+.glassSecondLayer
+    background: radial-gradient(circle at top left, rgba(255,255,255,0.2), rgba(0,0,0, 0.2)), url(../public/noise.svg), rgba(255, 255, 255, 0.5)
+    filter: contrast(1.25)
+
+.div
+    height: 1000px
+    width: 1000px
+    position: absolute
+    filter: blur(125px) saturate(5)
+
+.div1
+    background: linear-gradient(45deg,#ff33ec,#00fff9)
+    animation: animate1 30s linear infinite
+
+.div2
+    background: linear-gradient(45deg,#ff33ec,#00fff9)
+    animation: animate2 30s linear infinite
+
+.div3
+    background: linear-gradient(45deg,yellow,red)
+    animation: animate3 30s linear infinite
+
+.div4
+    background: linear-gradient(45deg,blue, #00ff85)
+    animation: animate4 30s linear infinite
+
+.div5
+    background: linear-gradient(45deg, #00ff85,#ff33ec)
+    animation: animate5 30s linear infinite
+
+@keyframes animate1
+    0%
+        transform: translateX(100%) translateY(0%)
+
+    25%
+        transform: translateX(50%) translateY(10%)
+
+    50%
+        transform: translateX(50%) translateY(10%)
+
+    75%
+        transform: translateX(100%) translateY(0%)
+
+    100%
+        transform: translateX(50%) translateY(0%)
+
+@keyframes animate2
+    0%
+        transform: translateX(100%) translateY(0%)
+
+    25%
+        transform: translateX(50%) translateY(0%) rotate(0deg)
+
+    50%
+        transform: translateX(0%) translateY(10%) rotate(100deg)
+
+    75%
+        transform: translateX(50%) translateY(0%)
+
+    100%
+        transform: translateX(100%) translateY(0%)
+
+@keyframes animate3
+    0%
+        transform: translateX(0%) translateY(0%)
+
+    25%
+        transform: translateX(50%) translateY(50%)
+
+    50%
+        transform: translateX(100%) translateY(10%)
+
+    75%
+        transform: translateX(50%) translateY(0%)
+
+    100%
+        transform: translateX(0%) translateY(0%)
+
+@keyframes animate4
+    0%
+        transform: translateX(0%) translateY(0%)
+
+    25%
+        transform: translateX(0%) translateY(20%) rotate(0deg)
+
+    50%
+        transform: translateX(10%) translateY(60%) rotate(100deg)
+
+    75%
+        transform: translateX(50%) translateY(0%)
+
+    100%
+        transform: translateX(0%) translateY(0%)
+
+@keyframes animate5
+    0%
+        transform: translateX(0%) translateY(0%)
+
+    25%
+        transform: translateX(50%) translateY(40%)
+
+    50%
+        transform: translateX(80%) translateY(0%) rotate(0)
+
+    75%
+        transform: translateX(50%) translateY(40%) rotate(200deg)
+
+    100%
+        transform: translateX(0%) translateY(0%) rotate(360deg)
