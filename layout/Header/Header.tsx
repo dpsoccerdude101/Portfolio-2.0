@@ -7,19 +7,25 @@ export default function Header({ ...props }: HeaderProps): JSX.Element {
     return (
         <header {...props} className={cn(styles.profile)}>
             <div
-                className={cn(
-                    overlayStyles.glass,
-                    styles.profile__container,
-                    styles.grid,
-                )}
-            >
-                <div className={cn(styles.profile__data, styles.innerElement)}>
-                    <div
                         className={cn(styles.profile__border)}
                         style={{ backdropFilter: 'blur(15px)' }}
                     >
                         <img src='./images/capture.webp' alt='' />
                     </div>
+            <div
+                className={cn(
+                    overlayStyles.glass,
+                    styles.profile__container,
+                    styles.grid
+                )}
+            >
+                <div className={cn(styles.profile__data)}>
+                    {/* <div
+                        className={cn(styles.profile__border)}
+                        style={{ backdropFilter: 'blur(15px)' }}
+                    >
+                        <img src='./images/capture.webp' alt='' />
+                    </div> */}
                     <h2 className={styles.profile__name}>Dennis Pavlyuk</h2>
                     <h3 className={styles.profile__profession}>
                         ReactJS Developer
@@ -30,10 +36,7 @@ export default function Header({ ...props }: HeaderProps): JSX.Element {
                             <a
                                 key={social.id}
                                 href={social.href}
-                                style={{ backdropFilter: 'blur(15px)' }}
                                 className={cn(
-                                    overlayStyles.glass,
-                                    overlayStyles.glassSecondLayer,
                                     overlayStyles.glassHover,
                                     styles.profile__socialLink
                                 )}
@@ -51,13 +54,7 @@ export default function Header({ ...props }: HeaderProps): JSX.Element {
                     </ul>
                 </div>
 
-                <div
-                    className={cn(
-                        styles.profile__info,
-                        styles.grid,
-                        styles.innerElement
-                    )}
-                >
+                <div className={cn(styles.profile__info, styles.grid)}>
                     {profileInfo.map((info) => (
                         <div
                             className={styles.profile__infoGroup}
@@ -81,7 +78,7 @@ export default function Header({ ...props }: HeaderProps): JSX.Element {
                         style={{ backdropFilter: 'blur(15px)' }}
                         className={cn(
                             styles.button,
-                            overlayStyles.glass,
+
                             overlayStyles.glassHover
                         )}
                         target='_blank'
@@ -97,7 +94,7 @@ export default function Header({ ...props }: HeaderProps): JSX.Element {
                             className={cn(
                                 styles.button,
                                 styles.button__small,
-                                overlayStyles.glass,
+
                                 overlayStyles.glassHover
                             )}
                             target='_blank'
