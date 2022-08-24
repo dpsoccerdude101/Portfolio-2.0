@@ -11,11 +11,11 @@ const Home: NextPage = () => {
     return (
         <Page title='Dennis Pavlyuk' description='Full-Stack Developer'>
             <div className={cn(styles.overlay, styles.wrapper)}>
-                <div className={cn(styles.div, styles.div1)}></div>
+                {/* <div className={cn(styles.div, styles.div1)}></div>
                 <div className={cn(styles.div, styles.div2)}></div>
                 <div className={cn(styles.div, styles.div3)}></div>
                 <div className={cn(styles.div, styles.div4)}></div>
-                <div className={cn(styles.div, styles.div5)}></div>
+                <div className={cn(styles.div, styles.div5)}></div> */}
             </div>
             <Header />
             <Main />
