@@ -2,29 +2,20 @@ import { HeaderProps, socialData, profileInfo } from './Header.props';
 import styles from './Header.module.sass';
 import overlayStyles from '../../styles/overlay.module.sass';
 import cn from 'classnames';
-import Tilt from 'react-parallax-tilt';
 
 export default function Header({ ...props }: HeaderProps): JSX.Element {
     return (
         <header {...props} className={cn(styles.profile)}>
-            <Tilt
-                gyroscope={true}
-                tiltAxis='y'
-                tiltMaxAngleY={1.5}
+            <div
                 className={cn(
                     overlayStyles.glass,
-                    overlayStyles.glassHover,
                     styles.profile__container,
                     styles.grid,
-                    styles.parallaxEffect
                 )}
             >
                 <div className={cn(styles.profile__data, styles.innerElement)}>
                     <div
-                        className={cn(
-                            styles.profile__border,
-
-                        )}
+                        className={cn(styles.profile__border)}
                         style={{ backdropFilter: 'blur(15px)' }}
                     >
                         <img src='./images/capture.webp' alt='' />
@@ -116,7 +107,7 @@ export default function Header({ ...props }: HeaderProps): JSX.Element {
                         </a>
                     </div>
                 </div>
-            </Tilt>
+            </div>
         </header>
     );
 }
