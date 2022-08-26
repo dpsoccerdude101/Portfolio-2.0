@@ -2,6 +2,9 @@
 @import ../../styles/_typography
 @import ../../styles/_colors
 
+$violet: violet
+$blue: #0ff
+
 .profile
 	position: relative
 	padding-top: 3.5rem
@@ -30,7 +33,16 @@
 		justify-content: center
 		flex-direction: column
 
+		//box-shadow: inset 0px 0px 0px 1px rgb(0 0 0 / 2%), inset 0px 0px 0px 1px rgb(255 255 255 / 8%), 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%), inset 20px 0 80px #f0f, inset -20px 0 80px #0ff, inset 20px 0 300px #f0f, inset -20px 0 300px #0ff, 0 0 50px #fff, -10px 0 80px #f0f, 10px 0 80px #0ff
+
+		//filter: drop-shadow(10px 10px 200px $tod-tri) drop-shadow(-10px -10px 50px $tod-tri)
 		padding-top: 95px
+
+		//filter: blur(115px) drop-shadow(-10px -10px 75px $tod-tri)
+		//clip-path: polygon(50% 0%, 0% 100%, 100% 100%)
+		//background-color: $tod-tri
+
+		//box-shadow: inset 0 0 50px #fff, inset 20px 0 60px $violet, inset -20px 0 60px $blue, inset 20px 0 300px $violet, inset -20px 0 300px $blue, 0 0 50px #fff, -10px 0 60px $violet, 10px 0 60px $blue
 
 	&__data
 		display: grid
@@ -40,13 +52,14 @@
 	&__perfil
 		width: 100px
 		height: 100px
-		background-color: radial-gradient(circle at top left, hsla(199, 97%, 74%, 0.5), rgba( 0, 0, 0, 0.1 )), url(../../public/noise.svg)
-		backdrop-filter: blur(5px)
+		//background-color: $--title-color
+		//backdrop-filter: blur(5px)
 		box-shadow: inset 0px 0px 0px 1px rgba( 0, 0, 0, 0.02 ), inset 0px 0px 0px 1px rgba( 255, 255, 255, 0.08 )
 		box-sizing: border-box
 		position: relative
+		//box-shadow: inset 0 0 50px #fff, inset 20px 0 80px #f0f, inset -20px 0 80px #0ff, -10px 0 80px #f0f, 10px 0 80px #0ff, inset 20px 0 300px #f0f, inset -20px 0 300px #0ff, 0 0 50px #fff
 
-		//background: linear-gradient(180deg,hsla(199, 97%, 74%, 1) 0%, hsla(199, 97%, 74%, 0.2) 100%)
+		background: linear-gradient(180deg,rgba(255,0,255,0.5) 0%, rgba(0,255,255,0.5) 100%)
 		border-radius: 50%
 		overflow: hidden
 		display: flex
@@ -57,7 +70,7 @@
 			width: 90px
 
 	&__border
-		//border: 3.5px solid hsla(199, 97%, 74%, 1)
+		border: 3.5px solid #0ff
 		justify-content: center
 		width: 115px
 		height: 115px
@@ -65,18 +78,16 @@
 		display: grid
 		place-items: center
 		margin-bottom: .75rem
-		transform-style: preserve-3d
+
 		display: flex
-		align-items: flex-end
 		justify-content: center
 		overflow: hidden
-		background: radial-gradient(circle at top left, rgba(255,255,255,0.2), rgba(0,0,0, 0.2)), url(../../public/noise.svg), linear-gradient(45deg, rgba(109,126,186,0.8), rgba(59,140,133,0.8))
+		//background: radial-gradient(circle at top left, rgba(255,255,255,0.2), rgba(0,0,0, 0.2)), url(../../public/noise.svg), linear-gradient(45deg, rgba(109,126,186,0.8), rgba(59,140,133,0.8))
 		filter: contrast(1.25)
-		box-shadow: inset 0px 0px 0px 1px hsla(199, 97%, 74%, 0.1), inset 0px 0px 0px 1px hsla(199, 97%, 74%, 0.7), 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%)
+		//box-shadow: inset 0px 0px 0px 1px hsla(199, 97%, 74%, 0.1), inset 0px 0px 0px 1px hsla(199, 97%, 74%, 0.7), 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%)
 
 		margin-bottom: -86.25px
 		//margin-left: calc(380px - 156px)
-		border-radius: 50%
 
 		object-fit: cover
 		object-position: center
@@ -91,6 +102,7 @@
 
 	&__profession
 		text-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%)
+		//text-shadow: 0 0 4px #fff,0 0 6px #fff,0 0 12.6px #fff,0 0 25px #f09,0 0 49px #f09,0 0 55px #f09,0 0 61px #f09,0 0 90.6px #f09
 
 	&__social
 		display: flex
@@ -98,31 +110,30 @@
 		column-gap: .75rem
 
 	&__socialLink
-		margin-top: .5rem
+		margin-top: .3rem
 		font-size: 2rem
 		color: $--title-color
 		transition: .3s
 		border-radius: 50%
 		height: 40px
 		width: 40px
-		&:hover
-			color: $--first-color
-		&:nth-last-child(1) i
-			color: #0072b1
-		&:nth-last-child(2) i
-			color: #e7dada
-		&:nth-last-child(3) i
-			color: transparent
-			background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)
-			background-clip: text
-		&:nth-last-child(4) i
-			color: #0088CC
+		// &:hover
+		// 	color: $--first-color
+		// &:nth-last-child(1) i
+		// 	color: #0072b1
+		// &:nth-last-child(2) i
+		// 	color: #e7dada
+		// &:nth-last-child(3) i
+		// 	color: transparent
+		// 	background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)
+		// 	background-clip: text
+		// &:nth-last-child(4) i
+		// 	color: #0088CC
 
 	&__socialIcon
 		z-index: 3
 		width: 100%
 		height: 100%
-		color: black
 		display: flex
 		justify-content: center
 		align-items: center
@@ -171,8 +182,8 @@
 	padding: 1.15rem 1.5rem
 	border-radius: .625rem
 	transition: .3s
-	background: linear-gradient(45deg, rgba(109,126,186,1), rgba(59,140,133,1))
-	filter: contrast(1.25)
+	background: linear-gradient(45deg, #f0f, #0ff)
+	//filter: contrast(1.25)
 	box-shadow: inset 0px 0px 0px 1px rgb(0 0 0 / 2%), inset 0px 0px 0px 1px rgb(255 255 255 / 8%), 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%)
 	//backdrop-filter: blur(5px)
 	//box-shadow: inset 0px 0px 0px 1px rgba( 0, 0, 0, 0.02 ), inset 0px 0px 0px 1px rgba( 255, 255, 255, 0.08 )
