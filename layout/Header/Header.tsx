@@ -7,15 +7,17 @@ export default function Header({ ...props }: HeaderProps): JSX.Element {
     return (
         <header {...props} className={cn(styles.profile)}>
             <div
-                        className={cn(styles.profile__border)}
-                        style={{ backdropFilter: 'blur(15px)' }}
-                    >
-                        <img src='./images/capture.webp' alt='' />
-                    </div>
+                className={cn(styles.profile__border)}
+                style={{ backdropFilter: 'blur(15px)' }}
+            >
+                <div className={styles.profile__perfil}>
+                    <img src='./images/capture.webp' alt='' />
+                </div>
+            </div>
             <div
                 className={cn(
-                    overlayStyles.glass,
                     styles.profile__container,
+                    overlayStyles.glass,
                     styles.grid
                 )}
             >

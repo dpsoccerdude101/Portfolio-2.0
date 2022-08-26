@@ -6,6 +6,8 @@ import Main from '../layout/Main/Main';
 import Footer from '../layout/Footer/Footer';
 import styles from '../styles/overlay.module.sass';
 import cn from 'classnames';
+import Goo from 'gooey-react';
+import Gooey from '../components/gooey';
 
 const Home: NextPage = () => {
     return (
@@ -19,14 +21,9 @@ const Home: NextPage = () => {
                 width: '100%',
             }}
         >
-            {/*             <div className={cn(styles.overlay, styles.wrapper)}>
-                <div className={cn(styles.div, styles.div1)}></div>
-                <div className={cn(styles.div, styles.div2)}></div>
-                <div className={cn(styles.div, styles.div3)}></div>
-                <div className={cn(styles.div, styles.div4)}></div>
-                <div className={cn(styles.div, styles.div5)}></div>
-            </div> */}
-
+            <div style={{ position: 'fixed', zIndex: '-10' }}>
+                <Gooey total={6} />
+            </div>
             <Header />
             <Main />
             <Footer />
