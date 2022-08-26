@@ -94,12 +94,12 @@ $breakpoints: (phone: 640px, tablet: 768px, desktop: 1024px) !default
 	display: inline-flex
 	align-items: center
 	column-gap: .5rem
-	background-color: $--first-color
+	background-color: black
 	color: $white
 	padding: 1.15rem 1.5rem
 	border-radius: .5rem
 	transition: .3s
-	box-shadow: 0 8px 24px hsla($--hue,$--sat,$--lig, .25)
+	box-shadow: 0 8px 24px rgba(255,255,255,0.2)
 
 	&:hover
 		background-color: $--first-color-alt
@@ -170,7 +170,14 @@ $breakpoints: (phone: 640px, tablet: 768px, desktop: 1024px) !default
 		height: 100%
 		bottom: -100%
 		left: 0
-		background: linear-gradient(180deg, hsla($--hue, 24%, 40%, .3) 0%, hsla($--hue, 24%, 4%, 1) 95%,)
+		//background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, hsla($--hue, 24%, 4%, 1) 95%,)
+
+		transition: all 0.3s cubic-bezier(.25,.8,.25,1)
+
+		background: radial-gradient(circle at top left, rgba(255,255,255,0.2), rgba(0, 0, 0, 0.2)), url(../../public/noise.svg)
+		box-shadow: inset 0px 0px 0px 1px rgb(0 0 0 / 2%), inset 0px 0px 0px 1px rgb(255 255 255 / 8%), 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%)
+		box-sizing: border-box
+
 		display: grid
 		align-items: flex-end
 		padding: 1.5rem 1.25rem
