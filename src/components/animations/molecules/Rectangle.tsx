@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { FlattenSimpleInterpolation } from 'styled-components';
 import { getAnimation } from '../../../utilities/gooeyService';
 
 type RectangleProps = {
@@ -9,7 +9,7 @@ type RectangleProps = {
     $height: string;
     $fill: string;
     $minTime: number;
-    $returnFunc: (time: number, delay: number) => string;
+    $returnFunc: (time: number, delay: number) => FlattenSimpleInterpolation;
 };
 
 const Rectangle = styled.rect<RectangleProps>`
@@ -19,8 +19,9 @@ const Rectangle = styled.rect<RectangleProps>`
     width: ${({ $width }) => $width};
     height: ${({ $height }) => $height};
     fill: ${({ $fill }) => $fill};
-    animation: ${({ $minTime, $returnFunc }) =>
+    ${({ $minTime, $returnFunc }) =>
         getAnimation($minTime, $minTime * 2, $returnFunc)};
+    transform-origin: 50%;
 `;
 
 export default Rectangle;

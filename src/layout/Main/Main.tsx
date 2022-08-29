@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import styles from './Main.module.sass';
 import overlayStyles from '../../styles/overlay.module.sass';
 import {
@@ -9,9 +9,8 @@ import {
     skillsDataFrontEnd,
     skillsDataML,
 } from './Main.props';
-import { isMobile } from 'react-device-detect';
 
-export default function Main({ ...props }: MainProps): JSX.Element {
+const Main = ({ ...props }: MainProps): JSX.Element => {
     const [activeTab, setActiveTab] = useState<'projects' | 'skills'>(
         'projects'
     );
@@ -199,4 +198,6 @@ export default function Main({ ...props }: MainProps): JSX.Element {
             </section>
         </main>
     );
-}
+};
+
+export default Main;
