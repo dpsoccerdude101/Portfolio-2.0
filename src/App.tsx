@@ -1,5 +1,4 @@
 import './styles/globals.sass';
-import './styles/anims.css';
 import 'remixicon/fonts/remixicon.css';
 import Header from './layout/Header/Header';
 import Main from './layout/Main/Main';

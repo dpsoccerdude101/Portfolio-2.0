@@ -1,4 +1,5 @@
 import { isMobile } from 'react-device-detect';
+import { css, FlattenSimpleInterpolation, keyframes } from 'styled-components';
 
 const randomNumFromInterval = (min: number, max: number) =>
     Math.random() * (max - min) + min;
@@ -71,50 +72,125 @@ const getGooTranslation = (
     )}px)` as const;
 };
 
-const returnFuncs = {
-    g: (time: number, delay: number): string =>
-        `${time}s linear ${delay}ms infinite normal none running rotate_back`,
-    g1: (time: number, delay: number): string =>
-        `${time}s linear ${delay}ms infinite normal none running rotate`,
-    circle1: (time: number, delay: number): string =>
-        `${time}s ease-in-out -${
-            delay * 3
-        }ms infinite alternate none running blob_four`,
-    circle2: (time: number, delay: number): string =>
-        `${time}s ease-in-out -${
-            delay * 3
-        }ms infinite alternate none running blob_three`,
-    circle3: (time: number, delay: number): string =>
-        `${time}s ease-in-out -${
-            delay * 3
-        }ms infinite alternate none running blob_two`,
-    circle4: (time: number, delay: number): string =>
-        `${time}s ease-in-out -${
-            delay * 3
-        }ms infinite alternate none running blob_one`,
-    rect1: (time: number, delay: number): string =>
-        `${time}s ease-in-out -${
-            delay * 3
-        }ms infinite alternate none running hero_one`,
+const rotate = keyframes`
+100%{
+    transform: rotate(360deg);
+}
+`;
 
-    rect2: (time: number, delay: number): string =>
-        `${time}s ease-in-out -${
-            delay * 3
-        }ms infinite alternate none running hero_three`,
-    rect3: (time: number, delay: number): string =>
-        `${time}s ease-in-out -${
-            delay * 3
-        }ms infinite alternate none running hero_two`,
-    rect4: (time: number, delay: number): string =>
-        `${time}s ease-in-out -${
-            delay * 3
-        }ms infinite alternate none running hero_four`,
+const rotate_back = keyframes`
+100% {
+    transform: rotate(-360deg);
+}`;
+
+const sway = keyframes`
+ 100% {
+        transform: translateX(10%);
+    }
+`;
+const drop = keyframes`
+100% {
+        transform: translateY(45%);
+    }
+`;
+const rise = keyframes`
+100% {
+        transform: translateY(-20%);
+    }
+`;
+const hero_one = keyframes`
+100% {
+        transform: rotate(360deg) translate(17.5%, 17.5%);
+    }
+`;
+const hero_two = keyframes`
+ 100% {
+        transform: rotate(360deg) translate(17.5%, -17.5%);
+    }
+`;
+const hero_three = keyframes`
+100% {
+        transform: rotate(360deg) translate(-17.5%, 17.5%);
+    }
+`;
+const hero_four = keyframes`
+100% {
+        transform: rotate(360deg) translate(-17.5%, -17.5%);
+    }
+`;
+const blob_one = keyframes`
+100% {
+        transform: rotate(-360deg) translate(-12.5%, -12.5%);
+    }
+`;
+const blob_two = keyframes`
+100% {
+        transform: rotate(-360deg) translate(-12.5%, -12.5%);
+    }
+`;
+
+const returnFuncs = {
+    g: (time: number, delay: number): FlattenSimpleInterpolation =>
+        css`
+            animation: ${time}s linear ${delay}ms infinite normal none running
+                ${rotate_back};
+        `,
+
+    g1: (time: number, delay: number): FlattenSimpleInterpolation =>
+        css`
+            animation: ${time}s linear ${delay}ms infinite normal none running
+                ${rotate};
+        `,
+    circle1: (time: number, delay: number): FlattenSimpleInterpolation =>
+        css`
+            animation: ${time}s ease-in-out -${delay * 3}ms infinite alternate none
+                running ${blob_two};
+        `,
+    circle2: (time: number, delay: number): FlattenSimpleInterpolation =>
+        css`
+            animation: ${time}s ease-in-out -${delay * 3}ms infinite alternate none
+                running ${blob_two};
+        `,
+    circle3: (time: number, delay: number): FlattenSimpleInterpolation =>
+        css`
+            animation: ${time}s ease-in-out -${delay * 3}ms infinite alternate none
+                running ${blob_two};
+        `,
+    circle4: (time: number, delay: number): FlattenSimpleInterpolation =>
+        css`
+            animation: ${time}s ease-in-out -${delay * 3}ms infinite alternate none
+                running ${blob_one};
+        `,
+    rect1: (time: number, delay: number): FlattenSimpleInterpolation =>
+        css`
+            animation: ${time}s ease-in-out -${delay * 3}ms infinite alternate none
+                running ${hero_one};
+        `,
+
+    rect2: (time: number, delay: number): FlattenSimpleInterpolation =>
+        css`
+            animation: ${time}s ease-in-out -${delay * 3}ms infinite alternate none
+                running ${hero_three};
+        `,
+    rect3: (time: number, delay: number): FlattenSimpleInterpolation =>
+        css`
+            animation: ${time}s ease-in-out -${delay * 3}ms infinite alternate none
+                running ${hero_two};
+        `,
+    rect4: (time: number, delay: number): FlattenSimpleInterpolation =>
+        css`
+            animation: ${time}s ease-in-out -${delay * 3}ms infinite alternate none
+                running ${hero_four};
+        `,
 };
 
 const getAnimation = (
     minTime: number,
     maxTime: number,
-    returnFunc: (time: number, animationDelay: number) => string
+    returnFunc: (
+        time: number,
+        animationDelay: number
+    ) => FlattenSimpleInterpolation
 ) => {
     const time = randomIntFromInterval(minTime, maxTime);
     const delay = randomNumFromInterval(1, 4500);
