@@ -11,7 +11,7 @@ export default function Header({ ...props }: HeaderProps): JSX.Element {
                 style={{ backdropFilter: 'blur(15px)' }}
             >
                 <div className={styles.profile__perfil}>
-                    <img src='./images/capture.webp' alt='' />
+                    <img src='images/capture.webp' alt='' />
                 </div>
             </div>
             <div
@@ -36,7 +36,7 @@ export default function Header({ ...props }: HeaderProps): JSX.Element {
                     <ul className={styles.profile__social}>
                         {socialData.map((social) => (
                             <a
-                                key={social.id}
+                                key={`${social.id}${social.href}`}
                                 href={social.href}
                                 className={cn(
                                     overlayStyles.glassHover,
@@ -60,7 +60,7 @@ export default function Header({ ...props }: HeaderProps): JSX.Element {
                     {profileInfo.map((info) => (
                         <div
                             className={styles.profile__infoGroup}
-                            key={info.id}
+                            key={`${info.id}${info.title}`}
                         >
                             <h3 className={styles.profile__infoNumber}>
                                 {info.title}

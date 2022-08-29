@@ -9,6 +9,7 @@ import {
     skillsDataFrontEnd,
     skillsDataML,
 } from './Main.props';
+import { isMobile } from 'react-device-detect';
 
 export default function Main({ ...props }: MainProps): JSX.Element {
     const [activeTab, setActiveTab] = useState<'projects' | 'skills'>(
@@ -85,6 +86,7 @@ export default function Main({ ...props }: MainProps): JSX.Element {
                                                 styles.button,
                                                 styles.projects__small
                                             )}
+                                            title={item.title}
                                         >
                                             <i className='ri-link'></i>
                                         </a>
@@ -101,7 +103,12 @@ export default function Main({ ...props }: MainProps): JSX.Element {
                         )}
                     >
                         {/* Front-end */}
-                        <div className={styles.skills__area}>
+                        <div
+                            className={cn(
+                                styles.skills__area,
+                                overlayStyles.glass
+                            )}
+                        >
                             <h3 className={styles.skills__title}>Front-End</h3>
 
                             <div className={styles.skills__box}>
@@ -113,22 +120,21 @@ export default function Main({ ...props }: MainProps): JSX.Element {
                                         >
                                             <i className={item.icon}></i>
 
-                                            <div>
-                                                <h3
-                                                    className={
-                                                        styles.skills__name
-                                                    }
-                                                >
-                                                    {item.skill}
-                                                </h3>
-                                            </div>
+                                            <h3 className={styles.skills__name}>
+                                                {item.skill}
+                                            </h3>
                                         </div>
                                     ))}
                                 </div>
                             </div>
                         </div>
                         {/* Back-end */}
-                        <div className={styles.skills__area}>
+                        <div
+                            className={cn(
+                                styles.skills__area,
+                                overlayStyles.glass
+                            )}
+                        >
                             <h3 className={styles.skills__title}>Back-End</h3>
 
                             <div className={styles.skills__box}>
@@ -154,8 +160,13 @@ export default function Main({ ...props }: MainProps): JSX.Element {
                                 </div>
                             </div>
                         </div>
-                        {/* Back-end */}
-                        <div className={styles.skills__area}>
+                        {/* ML */}
+                        <div
+                            className={cn(
+                                styles.skills__area,
+                                overlayStyles.glass
+                            )}
+                        >
                             <h3 className={styles.skills__title}>
                                 Machine-Learning
                             </h3>

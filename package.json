@@ -1,42 +1,44 @@
 {
-  "name": "headsmanc0de.com",
-  "version": "1.1.4",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build && next export",
-    "start": "next start",
-    "lint": "next lint",
-    "deploy": "next build && next export && firebase deploy --only hosting"
-  },
-  "dependencies": {
-    "classnames": "^2.3.1",
-    "gooey-react": "^1.1.0",
-    "include-media": "^1.4.10",
-    "next": "^12.1.6",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-progressive-graceful-image": "^0.6.14",
-    "remixicon": "^2.5.0",
-    "sass": "^1.52.1"
-  },
-  "prettier": {
-    "trailingComma": "es5",
-    "tabWidth": 4,
-    "singleQuote": true,
-    "jsxSingleQuote": true
-  },
-  "devDependencies": {
-    "@types/node": "^17.0.36",
-    "@types/react": "^18.0.9",
-    "@types/react-dom": "^18.0.5",
-    "@typescript-eslint/eslint-plugin": "^5.26.0",
-    "@typescript-eslint/parser": "^5.26.0",
-    "eslint": "^8.16.0",
-    "eslint-config-next": "^12.1.6",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.30.0",
-    "typescript": "^4.7.2"
-  }
+    "name": "dennispavlyuk.com",
+    "private": true,
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "preview": "vite preview",
+        "deploy": "tsc && vite build && firebase deploy --only hosting"
+    },
+    "dependencies": {
+        "classnames": "^2.3.1",
+        "gooey-react": "^1.1.0",
+        "include-media": "^1.4.10",
+        "react": "^18.1.0",
+        "react-device-detect": "^2.2.2",
+        "react-dom": "^18.1.0",
+        "remixicon": "^2.5.0",
+        "styled-components": "^5.3.5"
+    },
+    "prettier": {
+        "trailingComma": "es5",
+        "tabWidth": 4,
+        "singleQuote": true,
+        "jsxSingleQuote": true
+    },
+    "devDependencies": {
+        "@types/node": "^17.0.36",
+        "@types/react": "^18.0.9",
+        "@types/react-dom": "^18.0.5",
+        "@types/styled-components": "^5.1.26",
+        "@typescript-eslint/eslint-plugin": "^5.26.0",
+        "@typescript-eslint/parser": "^5.26.0",
+        "@vitejs/plugin-react": "^2.0.1",
+        "eslint": "^8.16.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "eslint-plugin-react": "^7.30.0",
+        "sass": "^1.54.5",
+        "typescript": "^4.7.2",
+        "vite": "^3.0.7"
+    }
 }
