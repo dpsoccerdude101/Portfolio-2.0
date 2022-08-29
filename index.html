@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="React Developer" />
+        <title>Dennis Pavlyuk</title>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/javascript">
+            (function (w, d, a) {
+                w.__beusablerumclient__ = {
+                    load: function (src) {
+                        var b = d.createElement('script');
+                        b.src = src;
+                        b.async = true;
+                        b.type = 'text/javascript';
+                        d.getElementsByTagName('head')[0].appendChild(b);
+                    },
+                };
+                w.__beusablerumclient__.load(
+                    a + '?url=' + encodeURIComponent(d.URL)
+                );
+            })(window, document, '//rum.beusable.net/load/b220829e073736u304');
+        </script>
+        <script type="module" src="/src/main.tsx"></script>
+    </body>
+</html>

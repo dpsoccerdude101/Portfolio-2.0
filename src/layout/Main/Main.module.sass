@@ -174,7 +174,7 @@ $breakpoints: (phone: 640px, tablet: 768px, desktop: 1024px) !default
 
 		transition: all 0.3s cubic-bezier(.25,.8,.25,1)
 
-		background: radial-gradient(circle at top left, rgba(255,255,255,0.2), rgba(0, 0, 0, 0.2)), url(../../public/noise.svg)
+		background: radial-gradient(circle at top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url(/noise.svg)
 		box-shadow: inset 0px 0px 0px 1px rgb(0 0 0 / 2%), inset 0px 0px 0px 1px rgb(255 255 255 / 8%), 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%)
 		box-sizing: border-box
 
@@ -216,6 +216,14 @@ $breakpoints: (phone: 640px, tablet: 768px, desktop: 1024px) !default
 		text-align: left
 		margin-bottom: 1.5rem
 
+	&__area
+		padding: 30px
+		border-radius: 1rem
+		//transition: .3s
+		backdrop-filter: blur(15px)
+		-webkit-backdrop-filter: blur(15px)
+		min-width: 220px
+
 	&__box
 		display: flex
 		justify-content: start
@@ -229,11 +237,10 @@ $breakpoints: (phone: 640px, tablet: 768px, desktop: 1024px) !default
 	&__data
 		display: flex
 		column-gap: .5rem
+		mix-blend-mode: luminosity
 
 		i
 			font-size: 1rem
-			//color: $--first-color
-			mix-blend-mode: luminosity
 
 	&__name
 		font-size: $--normal-font-size
