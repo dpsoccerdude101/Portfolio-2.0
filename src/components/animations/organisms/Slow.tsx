@@ -15,7 +15,7 @@ const Slow = ({ index, length }: { index: number; length: number }) => (
             <Circle
                 $cx='50%'
                 $cy='50%'
-                $r='60'
+                $r='60px'
                 $fill='url(#gradient)'
                 $minTime={24}
                 $returnFunc={returnFuncs.circle1}
@@ -23,7 +23,7 @@ const Slow = ({ index, length }: { index: number; length: number }) => (
             <Circle
                 $cx='50%'
                 $cy='50%'
-                $r='48'
+                $r='48px'
                 $fill='url(#gradient)'
                 $minTime={18}
                 $returnFunc={returnFuncs.circle2}
@@ -31,7 +31,7 @@ const Slow = ({ index, length }: { index: number; length: number }) => (
             <Circle
                 $cx='50%'
                 $cy='50%'
-                $r='45'
+                $r='45px'
                 $fill='url(#gradient)'
                 $minTime={12}
                 $returnFunc={returnFuncs.circle3}
@@ -40,7 +40,7 @@ const Slow = ({ index, length }: { index: number; length: number }) => (
             <Circle
                 $cx='50%'
                 $cy='50%'
-                $r='36'
+                $r='36px'
                 $fill='url(#gradient)'
                 $minTime={6}
                 $returnFunc={returnFuncs.circle4}
