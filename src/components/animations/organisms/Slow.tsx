@@ -4,7 +4,7 @@ import Circle from '../molecules/Circle';
 import G from '../molecules/G';
 
 const Slow = ({ index, length }: { index: number; length: number }) => (
-    <AnimParent role='img' $index={index} $length={length}>
+    <AnimParent $index={index} $length={length}>
         <defs>
             <linearGradient id='gradient'>
                 <stop offset='0' stopColor='#f0f'></stop>
