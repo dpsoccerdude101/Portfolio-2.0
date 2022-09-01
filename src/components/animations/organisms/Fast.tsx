@@ -6,7 +6,7 @@ import Rectangle from '../molecules/Rectangle';
 const Fast = ({ index, length }: { index: number; length: number }) => (
     <AnimParent $index={index} $length={length}>
         <defs>
-            <linearGradient id='gradient'>
+            <linearGradient id='gradient1'>
                 <stop offset='0' stopColor='#f0f'></stop>
                 <stop offset='1' stopColor='#0ff'></stop>
             </linearGradient>
@@ -19,7 +19,7 @@ const Fast = ({ index, length }: { index: number; length: number }) => (
                 $rx='15.75%'
                 $width='35%'
                 $height='35%'
-                $fill='url(#gradient)'
+                $fill='url(#gradient1)'
                 $minTime={16}
                 $returnFunc={returnFuncs.rect1}
             />
@@ -29,7 +29,7 @@ const Fast = ({ index, length }: { index: number; length: number }) => (
                 $rx='18%'
                 $width='40%'
                 $height='40%'
-                $fill='url(#gradient)'
+                $fill='url(#gradient1)'
                 $minTime={24}
                 $returnFunc={returnFuncs.rect2}
             />
@@ -39,7 +39,7 @@ const Fast = ({ index, length }: { index: number; length: number }) => (
                 $rx='22.5%'
                 $width='50%'
                 $height='50%'
-                $fill='url(#gradient)'
+                $fill='url(#gradient1)'
                 $minTime={16}
                 $returnFunc={returnFuncs.rect3}
             />
@@ -49,7 +49,7 @@ const Fast = ({ index, length }: { index: number; length: number }) => (
                 $rx='27%'
                 $width='60%'
                 $height='60%'
-                $fill='url(#gradient)'
+                $fill='url(#gradient1)'
                 $minTime={32}
                 $returnFunc={returnFuncs.rect4}
             />

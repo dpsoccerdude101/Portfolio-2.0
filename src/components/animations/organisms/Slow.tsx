@@ -6,7 +6,7 @@ import G from '../molecules/G';
 const Slow = ({ index, length }: { index: number; length: number }) => (
     <AnimParent $index={index} $length={length}>
         <defs>
-            <linearGradient id='gradient'>
+            <linearGradient id='gradient2'>
                 <stop offset='0' stopColor='#f0f'></stop>
                 <stop offset='1' stopColor='#0ff'></stop>
             </linearGradient>
@@ -16,7 +16,7 @@ const Slow = ({ index, length }: { index: number; length: number }) => (
                 $cx='50%'
                 $cy='50%'
                 $r='60px'
-                $fill='url(#gradient)'
+                $fill='url(#gradient2)'
                 $minTime={24}
                 $returnFunc={returnFuncs.circle1}
             />
@@ -24,7 +24,7 @@ const Slow = ({ index, length }: { index: number; length: number }) => (
                 $cx='50%'
                 $cy='50%'
                 $r='48px'
-                $fill='url(#gradient)'
+                $fill='url(#gradient2)'
                 $minTime={18}
                 $returnFunc={returnFuncs.circle2}
             />
@@ -32,7 +32,7 @@ const Slow = ({ index, length }: { index: number; length: number }) => (
                 $cx='50%'
                 $cy='50%'
                 $r='45px'
-                $fill='url(#gradient)'
+                $fill='url(#gradient2)'
                 $minTime={12}
                 $returnFunc={returnFuncs.circle3}
             />
@@ -41,7 +41,7 @@ const Slow = ({ index, length }: { index: number; length: number }) => (
                 $cx='50%'
                 $cy='50%'
                 $r='36px'
-                $fill='url(#gradient)'
+                $fill='url(#gradient2)'
                 $minTime={6}
                 $returnFunc={returnFuncs.circle4}
             />
