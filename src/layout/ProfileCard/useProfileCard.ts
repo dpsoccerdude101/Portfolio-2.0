@@ -1,24 +1,9 @@
-import { DetailedHTMLProps, HTMLAttributes } from 'react';
+import profilePic from '/images/capture.webp';
+import resume from '/files/DennisPavlyukResume.pdf';
+import { SocialDataModel } from './types/SocialDataModel';
+import { ProfileInfoModel } from './types/ProfileInfoModel';
 
-export type HeaderProps = DetailedHTMLProps<
-    HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
->;
-
-interface socialData {
-    id: number;
-    social: string;
-    href: string;
-    icon: string;
-}
-
-interface profileInfo {
-    id: number;
-    title: number | string;
-    desctiption: string;
-}
-
-export const socialData: socialData[] = [
+const socialData: SocialDataModel[] = [
     {
         id: 0,
         social: 'Telegram',
@@ -45,20 +30,26 @@ export const socialData: socialData[] = [
     },
 ];
 
-export const profileInfo: profileInfo[] = [
+const profileInfo: ProfileInfoModel[] = [
     {
         id: 0,
-        title: 'MicCheck',
-        desctiption: 'Current company',
+        title: 'BrightFi',
+        description: 'Current company',
     },
     {
         id: 1,
-        title: 4,
-        desctiption: 'Projects',
+        title: 5,
+        description: 'Projects',
     },
-	{
+    {
         id: 1,
         title: '2+',
-        desctiption: 'Years experience',
+        description: 'Years experience',
     },
 ];
+
+const useProfileCard = () => ({
+    vm: { socialData, profileInfo, profilePic, resume },
+});
+
+export default useProfileCard;

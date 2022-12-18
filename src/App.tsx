@@ -1,9 +1,9 @@
 import './styles/globals.sass';
 import 'remixicon/fonts/remixicon.css';
-import Header from './layout/Header/Header';
+import ProfileCard from './layout/ProfileCard';
 import Main from './layout/Main/Main';
 import Footer from './layout/Footer/Footer';
-import Gooey from './components/animations/Gooey';
+import Gooey from './common/animations/Gooey';
 
 const App = () => (
     <div
@@ -17,7 +17,7 @@ const App = () => (
         <div style={{ zIndex: '-10' }}>
             <Gooey total={6} />
         </div>
-        <Header />
+        <ProfileCard />
         <Main />
         <Footer />
     </div>
