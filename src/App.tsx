@@ -3,7 +3,7 @@ import 'remixicon/fonts/remixicon.css';
 import ProfileCard from './layout/ProfileCard';
 import Main from './layout/Main/Main';
 import Footer from './layout/Footer/Footer';
-import Gooey from './components/animations/Gooey';
+import Gooey from './common/animations/Gooey';
 
 const App = () => (
     <div
