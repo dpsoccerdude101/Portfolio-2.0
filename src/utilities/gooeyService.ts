@@ -73,12 +73,18 @@ const getGooTranslation = (
 };
 
 const rotate = keyframes`
+0% {
+    transform: rotate(0deg);
+}
 100%{
     transform: rotate(360deg);
 }
 `;
 
 const rotate_back = keyframes`
+0% {
+    transform: rotate(0deg);
+}
 100% {
     transform: rotate(-360deg);
 }`;
@@ -99,31 +105,49 @@ const rise = keyframes`
     }
 `;
 const hero_one = keyframes`
+0% {
+    transform: rotate(0deg) translate(0%, 0%);
+}
 100% {
         transform: rotate(360deg) translate(17.5%, 17.5%);
     }
 `;
 const hero_two = keyframes`
+0% {
+    transform: rotate(0deg) translate(0%, 0%);
+}
  100% {
         transform: rotate(360deg) translate(17.5%, -17.5%);
     }
 `;
 const hero_three = keyframes`
+0% {
+    transform: rotate(0deg) translate(0%, 0%);
+}
 100% {
         transform: rotate(360deg) translate(-17.5%, 17.5%);
     }
 `;
 const hero_four = keyframes`
+0% {
+    transform: rotate(0deg) translate(0%, 0%);
+}
 100% {
         transform: rotate(360deg) translate(-17.5%, -17.5%);
     }
 `;
 const blob_one = keyframes`
+0% {
+    transform: rotate(0deg) translate(0%, 0%);
+}
 100% {
         transform: rotate(-360deg) translate(-12.5%, -12.5%);
     }
 `;
 const blob_two = keyframes`
+0% {
+    transform: rotate(0deg) translate(0%, 0%);
+}
 100% {
         transform: rotate(-360deg) translate(-12.5%, -12.5%);
     }
@@ -136,11 +160,10 @@ const returnFuncs = {
                 ${rotate_back};
         `,
 
-    g1: (time: number, delay: number): FlattenSimpleInterpolation =>
-        css`
-            animation: ${time}s linear ${delay}ms infinite normal none running
-                ${rotate};
-        `,
+    g1: (time: number, delay: number): FlattenSimpleInterpolation => css`
+        animation: ${time}s linear ${delay}ms infinite normal none running
+            ${rotate};
+    `,
     circle1: (time: number, delay: number): FlattenSimpleInterpolation =>
         css`
             animation: ${time}s ease-in-out -${delay * 3}ms infinite alternate none
