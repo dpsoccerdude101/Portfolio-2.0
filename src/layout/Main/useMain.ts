@@ -3,30 +3,24 @@ import RocMaidanImg from '/images/projects/rocmaidan.webp';
 import MicCheckImg from '/images/projects/miccheck.webp';
 import ScanPandaImg from '/images/projects/scanpanda.webp';
 import KalynaImg from '/images/projects/kalyna.webp';
+import ERCDigitalImg from '/images/projects/ercdigital.webp';
+import ERCDigitalMockupImg from '/images/projects/ercdigitalmockup.webp';
+import { SkillsModel } from './types/SkillsModel';
+import { ProjectModel } from './types/ProjectModel';
+import TabNames from './types/TabNames';
+import useTabsRepo from './hooks/useTabsRepo';
 
-export type MainProps = DetailedHTMLProps<
-    HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
->;
-
-interface ProjectDataType {
-    id: number;
-    img: string;
-    imgAlt: string;
-    title: string;
-    subtitle: string;
-    projectLink: string;
-}
-
-interface SkillsDataType {
-    id: number;
-    skill: string;
-    icon: string;
-}
-
-export const projectData: ProjectDataType[] = [
+export const projectData: ProjectModel[] = [
     {
         id: 0,
+        img: ERCDigitalMockupImg,
+        imgAlt: 'ERC Digital Logo',
+        title: 'ERC Digital',
+        subtitle: 'Credit-Calculation for Employee Retention Credit',
+        projectLink: 'https://www.ercdigital.com/',
+    },
+    {
+        id: 1,
         img: RocMaidanImg,
         imgAlt: 'RocMaidan',
         title: 'RocMaidan',
@@ -34,7 +28,7 @@ export const projectData: ProjectDataType[] = [
         projectLink: 'https://www.rocmaidan.org/',
     },
     {
-        id: 1,
+        id: 2,
         img: MicCheckImg,
         imgAlt: 'MicCheck App',
         title: 'MicCheck App',
@@ -42,7 +36,7 @@ export const projectData: ProjectDataType[] = [
         projectLink: 'https://www.themiccheck.com/',
     },
     {
-        id: 2,
+        id: 3,
         img: ScanPandaImg,
         imgAlt: 'ScanPanda',
         title: 'ScanPanda',
@@ -50,7 +44,7 @@ export const projectData: ProjectDataType[] = [
         projectLink: 'https://scanpanda.org/',
     },
     {
-        id: 3,
+        id: 4,
         img: KalynaImg,
         imgAlt: 'Registration Form',
         title: 'Kalyna-UAFGR',
@@ -59,7 +53,7 @@ export const projectData: ProjectDataType[] = [
     },
 ];
 
-export const skillsDataFrontEnd: SkillsDataType[] = [
+export const skillsDataFrontEnd: SkillsModel[] = [
     {
         id: 0,
         skill: 'HTML5',
@@ -97,7 +91,7 @@ export const skillsDataFrontEnd: SkillsDataType[] = [
     },
 ];
 
-export const skillsDataBackEnd: SkillsDataType[] = [
+export const skillsDataBackEnd: SkillsModel[] = [
     {
         id: 0,
         skill: 'NodeJS/NestJS',
@@ -115,7 +109,7 @@ export const skillsDataBackEnd: SkillsDataType[] = [
     },
 ];
 
-export const skillsDataML: SkillsDataType[] = [
+export const skillsDataML: SkillsModel[] = [
     {
         id: 0,
         skill: 'Python',
@@ -137,3 +131,22 @@ export const skillsDataML: SkillsDataType[] = [
         icon: 'ri-google-line',
     },
 ];
+
+const useMain = () => {
+    const { activeTab, setActiveTab } = useTabsRepo();
+
+    const handleTabChange = (tabName: TabNames) => () => setActiveTab(tabName);
+
+    return {
+        vm: {
+            projectData,
+            skillsDataFrontEnd,
+            skillsDataBackEnd,
+            skillsDataML,
+            activeTab,
+        },
+        handleTabChange,
+    };
+};
+
+export default useMain;

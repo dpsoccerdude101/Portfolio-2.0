@@ -1,6 +1,6 @@
 import './styles/globals.sass';
 import 'remixicon/fonts/remixicon.css';
-import Header from './layout/Header/Header';
+import Header from './layout/ProfileCard';
 import Main from './layout/Main/Main';
 import Footer from './layout/Footer/Footer';
 import Gooey from './components/animations/Gooey';

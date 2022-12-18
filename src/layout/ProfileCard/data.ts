@@ -15,7 +15,7 @@ interface socialData {
 interface profileInfo {
     id: number;
     title: number | string;
-    desctiption: string;
+    description: string;
 }
 
 export const socialData: socialData[] = [
@@ -48,17 +48,17 @@ export const socialData: socialData[] = [
 export const profileInfo: profileInfo[] = [
     {
         id: 0,
-        title: 'MicCheck',
-        desctiption: 'Current company',
+        title: 'BrightFi',
+        description: 'Current company',
     },
     {
         id: 1,
-        title: 4,
-        desctiption: 'Projects',
+        title: 5,
+        description: 'Projects',
     },
 	{
         id: 1,
         title: '2+',
-        desctiption: 'Years experience',
+        description: 'Years experience',
     },
 ];

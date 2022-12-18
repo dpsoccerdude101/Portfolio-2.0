@@ -1,4 +1,5 @@
 import Goo from 'gooey-react';
+import useGooey from './hooks/useGooey';
 import Fast from './organisms/Fast';
 import Slow from './organisms/Slow';
 
@@ -13,16 +14,27 @@ type GooeyProps = {
     total: number;
 };
 
-const Gooey = (props: GooeyProps) => (
-    <Goo {...props}>
-        {[...Array(props.total)].map((_, index, arr) => {
-            return Math.random() < 0.333 ? (
-                <Slow index={index} length={arr.length} key={`${index}slow`} />
-            ) : (
-                <Fast index={index} length={arr.length} key={`${index}fast`} />
-            );
-        })}
-    </Goo>
-);
+const Gooey = (props: GooeyProps) => {
+    const { vm } = useGooey(props.total);
+    return (
+        <Goo {...props}>
+            {vm.gooArr.map((item, index, arr) =>
+                item === 'slow' ? (
+                    <Slow
+                        index={index}
+                        length={arr.length}
+                        key={`${index}slow`}
+                    />
+                ) : (
+                    <Fast
+                        index={index}
+                        length={arr.length}
+                        key={`${index}fast`}
+                    />
+                )
+            )}
+        </Goo>
+    );
+};
 
 export default Gooey;
