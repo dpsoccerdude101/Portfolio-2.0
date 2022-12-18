@@ -3,7 +3,6 @@ import RocMaidanImg from '/images/projects/rocmaidan.webp';
 import MicCheckImg from '/images/projects/miccheck.webp';
 import ScanPandaImg from '/images/projects/scanpanda.webp';
 import KalynaImg from '/images/projects/kalyna.webp';
-import ERCDigitalImg from '/images/projects/ercdigital.webp';
 import ERCDigitalMockupImg from '/images/projects/ercdigitalmockup.webp';
 import { SkillsModel } from './types/SkillsModel';
 import { ProjectModel } from './types/ProjectModel';
