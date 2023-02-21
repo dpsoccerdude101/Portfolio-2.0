@@ -1,4 +1,3 @@
-import { DetailedHTMLProps, HTMLAttributes } from 'react';
 import RocMaidanImg from '/images/projects/rocmaidan.webp';
 import MicCheckImg from '/images/projects/miccheck.webp';
 import ScanPandaImg from '/images/projects/scanpanda.webp';
@@ -9,7 +8,7 @@ import { ProjectModel } from './types/ProjectModel';
 import TabNames from './types/TabNames';
 import useTabsRepo from './hooks/useTabsRepo';
 
-export const projectData: ProjectModel[] = [
+const projectData: ProjectModel[] = [
     {
         id: 0,
         img: ERCDigitalMockupImg,
@@ -52,7 +51,7 @@ export const projectData: ProjectModel[] = [
     },
 ];
 
-export const skillsDataFrontEnd: SkillsModel[] = [
+const skillsDataFrontEnd: SkillsModel[] = [
     {
         id: 0,
         skill: 'HTML5',

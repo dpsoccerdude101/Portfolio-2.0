@@ -21,7 +21,7 @@ const ProfileCard = () => {
                 <div className={cn(styles.profile__data)}>
                     <h2 className={styles.profile__name}>Dennis Pavlyuk</h2>
                     <h3 className={styles.profile__profession}>
-                        React & TypeScript Developer
+                        Senior Software Engineer
                     </h3>
 
                     <ul className={styles.profile__social}>
