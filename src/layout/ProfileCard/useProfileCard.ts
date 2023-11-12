@@ -1,5 +1,5 @@
 import profilePic from '/images/capture.webp';
-import resume from '/files/DennisPavlyukResume.pdf';
+import resume from '/files/DennisPavlyukResume_2023.pdf';
 import { SocialDataModel } from './types/SocialDataModel';
 import { ProfileInfoModel } from './types/ProfileInfoModel';
 
@@ -33,17 +33,17 @@ const socialData: SocialDataModel[] = [
 const profileInfo: ProfileInfoModel[] = [
     {
         id: 0,
-        title: 'BrightFi',
+        title: 'Costco',
         description: 'Current company',
     },
     {
         id: 1,
-        title: 5,
+        title: 7,
         description: 'Projects',
     },
     {
         id: 1,
-        title: '2+',
+        title: '3+',
         description: 'Years experience',
     },
 ];
